@@ -1,5 +1,11 @@
+import Header from "./Header";
+
 const Browse = () => {
-  return <div>Browse</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default Browse;
