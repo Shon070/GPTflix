@@ -47,7 +47,7 @@ const Header = () => {
         {user && (
           <div className="flex mt-2 mx-5">
             <img
-              className="w-10 h-11 mt-10 mx-5"
+              className="w-10 h-11 mt-9 mx-5"
               src={USER_AVATAR}
               alt="User Avatar"
             />
