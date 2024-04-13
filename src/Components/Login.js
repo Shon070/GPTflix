@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { BACKGROUND_PHOTO } from "../utils/constants";
 import { checkValidData } from "../utils/validate";
@@ -8,10 +9,8 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
-import Header from "./Header";
 import { addUser } from "../utils/store/userSlice";
-import { useDispatch } from "react-redux";
+import Header from "./Header";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -19,8 +18,6 @@ const Login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const dispatch = useDispatch();
-
-  const navigate = useNavigate();
 
   const name = useRef();
   const email = useRef();
@@ -59,7 +56,6 @@ const Login = () => {
             .then(() => {
               const { uid, email, displayName } = auth.currentUser;
               dispatch(addUser({ uid, email, displayName }));
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(errorMessage);
@@ -79,7 +75,6 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           // console.log(user)
-          navigate("/browse");
         })
         .catch((error) => {
           // const errorCode = error.code;

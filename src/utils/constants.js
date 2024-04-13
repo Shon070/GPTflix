@@ -6,3 +6,17 @@ export const BACKGROUND_PHOTO =
 
 export const USER_AVATAR =
   "https://i.pinimg.com/736x/92/b4/e7/92b4e7c57de1b5e1e8c5e883fd915450.jpg";
+
+export const NOW_PLAYING =
+  "https://api.themoviedb.org/3/movie/now_playing?page=1";
+
+
+
+export const OPTIONS = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiY2RkZGE5NzhmYTQxYTczOWZkNTg0OGZhM2IzMDcyZSIsInN1YiI6IjY2MTkzM2IwYjlhMGJkMDE0OTEwZGNjNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.K_OnFsqSqe7vBG0uxxLTuP-pckPm-0Zecyub-I0nBjk",
+  },
+};
