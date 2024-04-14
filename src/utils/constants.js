@@ -10,7 +10,28 @@ export const USER_AVATAR =
 export const NOW_PLAYING =
   "https://api.themoviedb.org/3/movie/now_playing?page=1";
 
+export const POPULAR_MOVIES =
+  "https://api.themoviedb.org/3/movie/popular?&page=1";
 
+export const TOP_RATED_MOVIES =
+  "https://api.themoviedb.org/3/movie/top_rated?&page=1";
+
+export const UPCOMING_MOVIES =
+  "https://api.themoviedb.org/3/movie/upcoming?&page=1";
+
+export const TOP_RATED_SHOWS =
+  "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1";
+
+export const ON_AIR_SHOWS =
+  "https://api.themoviedb.org/3/tv/on_the_air?language=en-US&page=1";
+
+export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500/";
+
+export const POPULAR_SHOWS =
+  "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1";
+
+export const ARRIVING_TODAY =
+  "https://api.themoviedb.org/3/tv/airing_today?language=en-US&page=1";
 
 export const OPTIONS = {
   method: "GET",

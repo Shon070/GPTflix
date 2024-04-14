@@ -8,11 +8,11 @@ const Hero = () => {
   if (!subscribe) return;
 
   const movie = subscribe[0];
-  const { original_title, overview, id } = movie;
+  const { overview, id } = movie;
 
   return (
     <>
-      <MovieTitle title={original_title} description={overview} />
+      <MovieTitle description={overview} />
       <MovieTrailer id={id} />
     </>
   );

@@ -18,7 +18,7 @@ const MovieTrailer = ({ id }) => {
     <div>
       <button
         onClick={handleToggleMute}
-        className="absolute top-24 right-8 z-10 focus:outline-none"
+        className="absolute top-24 right-9 z-10 focus:outline-none"
       >
         <FontAwesomeIcon
           icon={isMuted ? faVolumeMute : faVolumeUp}
@@ -26,6 +26,7 @@ const MovieTrailer = ({ id }) => {
           size="lg"
         />
       </button>
+
       <iframe
         className="w-screen aspect-video"
         src={`https://www.youtube.com/embed/${
