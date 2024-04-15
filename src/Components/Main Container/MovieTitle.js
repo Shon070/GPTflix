@@ -1,8 +1,8 @@
 const MovieTitle = ({ description }) => {
   return (
-    <div className="absolute text-white pt-44 px-12">
+    <div className="absolute text-white pt-44 px-14">
       <img
-        className="w-96 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+        className="w-96 transition ease-in-out delay-0 hover:-translate-y-1 hover:scale-125 duration-300"
         src={process.env.PUBLIC_URL + "/Dune.png"}
         alt="Movie Logo"
       />

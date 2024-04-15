@@ -9,7 +9,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(0, 0, 0, 1);
 }
 
 /* For WebKit browsers (Chrome, Safari)  */
@@ -23,7 +23,7 @@
 }
 
 ::-webkit-scrollbar-track:horizontal {
-  background: transparent;
+  background: rgba(0, 0, 0, 1);
 }
 
 /* For Firefox */

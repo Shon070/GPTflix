@@ -1,16 +1,20 @@
+import { useSelector } from "react-redux";
 import Header from "./Header";
-import useArrivingTodayShows from "./Hooks/useArrivingTodayShows";
-import useNowPlaying from "./Hooks/useNowPlaying";
-import useOnAirShows from "./Hooks/useOnAirShows";
-import usePopularMovies from "./Hooks/usePopularMovies";
-import usePopularShows from "./Hooks/usePopularShows";
-import useTopRated from "./Hooks/useTopRated";
-import useTopRatedShows from "./Hooks/useTopRatedShows";
-import useUpcomingMovies from "./Hooks/useUpcomingMovies";
+import GptSearchPage from "./GPT Search Page/GptSearchPage";
 import Hero from "./Main Container/Hero";
 import SecondaryContainer from "./Secondary Container/SecondaryContainer";
+import useNowPlaying from "./Hooks/useNowPlaying";
+import useTopRated from "./Hooks/useTopRated";
+import usePopularMovies from "./Hooks/usePopularMovies";
+import useUpcomingMovies from "./Hooks/useUpcomingMovies";
+import useTopRatedShows from "./Hooks/useTopRatedShows";
+import usePopularShows from "./Hooks/usePopularShows";
+import useOnAirShows from "./Hooks/useOnAirShows";
+import useArrivingTodayShows from "./Hooks/useArrivingTodayShows";
 
 const Browse = () => {
+  const toggleGptSearch = useSelector((store) => store.gpt.showGptSearch);
+
   useNowPlaying();
   usePopularMovies();
   useTopRated();
@@ -19,11 +23,18 @@ const Browse = () => {
   useOnAirShows();
   usePopularShows();
   useArrivingTodayShows();
+
   return (
     <>
       <Header />
-      <Hero />
-      <SecondaryContainer />
+      {toggleGptSearch ? (
+        <GptSearchPage />
+      ) : (
+        <>
+          <Hero />
+          <SecondaryContainer />
+        </>
+      )}
     </>
   );
 };
