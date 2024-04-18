@@ -28,7 +28,7 @@ const MovieTrailer = ({ id }) => {
       </button>
 
       <iframe
-        className="w-screen aspect-video"
+        className="w-screen aspect-video -mt-6"
         src={`https://www.youtube.com/embed/${
           trailerVideo?.key
         }?si=5-eJYXSOSdeA94hr?&autoplay=1&mute=${isMuted ? 1 : 0}`}

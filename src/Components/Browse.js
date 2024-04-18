@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Header from "./Header";
 import GptSearchPage from "./GPT Search Page/GptSearchPage";
@@ -11,9 +12,18 @@ import useTopRatedShows from "./Hooks/useTopRatedShows";
 import usePopularShows from "./Hooks/usePopularShows";
 import useOnAirShows from "./Hooks/useOnAirShows";
 import useArrivingTodayShows from "./Hooks/useArrivingTodayShows";
+import LoadingScreen from "./LoadingScreen";
 
 const Browse = () => {
   const toggleGptSearch = useSelector((store) => store.gpt.showGptSearch);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timeout);
+  }, []);
 
   useNowPlaying();
   usePopularMovies();
@@ -27,12 +37,18 @@ const Browse = () => {
   return (
     <>
       <Header />
-      {toggleGptSearch ? (
-        <GptSearchPage />
+      {isLoading ? (
+        <LoadingScreen />
       ) : (
         <>
-          <Hero />
-          <SecondaryContainer />
+          {toggleGptSearch ? (
+            <GptSearchPage />
+          ) : (
+            <>
+              <Hero />
+              <SecondaryContainer />
+            </>
+          )}
         </>
       )}
     </>
